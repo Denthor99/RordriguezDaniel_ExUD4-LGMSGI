@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Empresa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="empresa.xsd">
+    <sucursal cod_sucursal="A89S4569">
+        <direccion>Calle La Hermosa Diela S/N</direccion>
+        <nom_trabajador>Arturo Robstein</nom_trabajador>
+        <fecha_pedido>2023-01-23</fecha_pedido>
+        <observacion_pedido>Urgente</observacion_pedido>
+        <articulo cod_articulo="ERS-678">
+            <num_unidades_pedidas>28</num_unidades_pedidas>
+            <precio_unidad>10.8</precio_unidad>
+            <observaciones>Especialmente Frágil</observaciones>
+            <plazo_revision>2</plazo_revision>
+        </articulo>
+    </sucursal>
+    <sucursal cod_sucursal="A6874564">
+        <direccion>Calle Almadrabal Nº12</direccion>
+        <nom_trabajador>Laura Rosales</nom_trabajador>
+        <fecha_pedido>2023-01-25</fecha_pedido>
+        <articulo cod_articulo="ORC-314">
+            <num_unidades_pedidas>8</num_unidades_pedidas>
+            <precio_unidad>129.99</precio_unidad>
+            <observaciones>Especialmente Frágil</observaciones>
+            <plazo_revision>7</plazo_revision>
+        </articulo>
+        <articulo cod_articulo="KRA-416">
+            <num_unidades_pedidas>2</num_unidades_pedidas>
+            <precio_unidad>49.99</precio_unidad>
+            <observaciones>Guardar en ambiente seco</observaciones>
+            <plazo_revision>4</plazo_revision>
+        </articulo>
+    </sucursal>
+</Empresa>

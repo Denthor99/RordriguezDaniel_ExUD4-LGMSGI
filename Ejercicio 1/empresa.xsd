@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Empresa" type="empresaTipo"/>
+    <xs:complexType name="empresaTipo">
+        <xs:sequence>
+            <xs:element name="sucursal" type="sucursalTipo" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="sucursalTipo">
+        <xs:sequence>
+            <xs:element name="direccion" type="xs:string" maxOccurs="1"/>
+            <xs:element name="nom_trabajador" type="xs:string"/>
+            <xs:element name="fecha_pedido" type="xs:date"/>
+            <xs:element name="observacion_pedido" type="observa_pedTipo" minOccurs="0"/>
+            <xs:element name="articulo" type="articuloTipo" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="cod_sucursal" type="cod_sucursalTipo"/>
+    </xs:complexType>
+    <xs:complexType name="articuloTipo">
+        <xs:sequence>
+            <xs:element name="num_unidades_pedidas" type="num_unidadesTipo"/>
+            <xs:element name="precio_unidad" type="xs:decimal"/>
+            <xs:element name="observaciones" type="xs:string"/>
+            <xs:element name="plazo_revision" type="revisionTipo"/>
+        </xs:sequence>
+        <xs:attribute name="cod_articulo" type="cod_articulo_tipo"/>
+    </xs:complexType>
+    <xs:simpleType name="cod_sucursalTipo">
+        <xs:restriction base="xs:string">
+            <xs:length value="8"/>
+            <xs:pattern value="[a-zA-Z].*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="observa_pedTipo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Urgente"/>
+            <xs:enumeration value="Incompleto"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="num_unidadesTipo">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="revisionTipo">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:minInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="cod_articulo_tipo">
+        <xs:restriction base="xs:string">
+            <xs:length value="7"/>
+            <xs:pattern value="[A-Z]{3}-[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
